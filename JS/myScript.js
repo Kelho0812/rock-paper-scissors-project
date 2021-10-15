@@ -6,19 +6,21 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    if ((playerSelection == "Rock" && computerSelection == "Paper") ||
-        (playerSelection == "Scissors" && computerSelection == "Rock") ||
-        (playerSelection == "Paper" && computerSelection == "Scissors")) {
-        console.log(`You lose! ${computerSelection} beats ${playerSelection}`)
+    let capitalized = caseInsensitive(playerSelection);
+
+    if ((capitalized == "Rock" && computerSelection == "Paper") ||
+        (capitalized == "Scissors" && computerSelection == "Rock") ||
+        (capitalized == "Paper" && computerSelection == "Scissors")) {
+        console.log(`You Lose! ${computerSelection} beats ${capitalized}`)
     }
-    else if ((playerSelection == "Rock" && computerSelection == "Scissors") ||
-        (playerSelection == "Scissors" && computerSelection == "Paper") ||
-        (playerSelection == "Paper" && computerSelection == "Rock")) {
-        console.log(`You Win! ${playerSelection} beats ${computerSelection}`)
+    else if ((capitalized == "Rock" && computerSelection == "Scissors") ||
+        (capitalized == "Scissors" && computerSelection == "Paper") ||
+        (capitalized == "Paper" && computerSelection == "Rock")) {
+        console.log(`You Win! ${capitalized} beats ${computerSelection}`)
 
     }
     else {
-        console.log(`Its a tie! ${playerSelection} ties with ${computerSelection} `)
+        console.log(`Its a tie! ${capitalized} ties with ${computerSelection} `)
     }
 }
 
@@ -27,9 +29,9 @@ function caseInsensitive(playerSelection) {
     let firstLetter = lowerCase[0].toUpperCase();
     let restWord = lowerCase.substr(1);
     let fullWord = `${firstLetter}` + `${restWord}`
-    fullWord = playerSelection;
+    return fullWord
 }
-const playerSelection = "Rock";
+const playerSelection = "ROCK";
 const computerSelection = computerPlay();
-caseInsensitive(playerSelection);
+console.log(caseInsensitive(playerSelection));
 console.log(playRound(playerSelection, computerSelection));
