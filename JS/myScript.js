@@ -48,10 +48,6 @@ function playRound(play1, play2) {
 }
 
 function Game() {
-    let gameLost = `You LOST the game! Computer wins ${computerScore} - ${playerScore}!`
-    let gameWon = `You WON the game! Player wins ${playerScore} - ${computerScore}!`
-    let gameTied = `It's a tie! The result is ${playerScore} - ${computerScore}!`
-
     for (let i = 0; i < 5; i++) {
         console.log(playRound(playerSelection(), computerPlay()));
     }
