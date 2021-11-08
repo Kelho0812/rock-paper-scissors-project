@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="JS/myScript.js"></script>
-    <title>Document</title>
-  </head>
-  <body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/styles.css" />
+        <script src="JS/myScript.js" defer></script>
+        <title>Document</title>
+    </head>
 
-  </body>
+    <body>
+        <div class="header">
+            <h1>Rock, Paper, Scissors</h1>
+            <h2>The Game</h2>
+        </div>
+        <div class="choicesArea">
+            <h3 class="choiceTitle">Make your selection!</h3>
+            <div class="choiceBoxes">
+                <div class="choices" id="rockChoice">
+                    <img
+                        src="https://picsum.photos/200/200"
+                        alt=""
+                        class="rockImage"
+                    />
+                    <h4>Rock</h4>
+                </div>
+                <div class="choices" id="paperChoice">
+                    <img
+                        src="https://picsum.photos/200/200"
+                        alt=""
+                        class="paperImage"
+                    />
+                    <h4>Paper</h4>
+                </div>
+                <div class="choices" id="scissorsChoice">
+                    <img
+                        src="https://picsum.photos/200/200"
+                        alt=""
+                        class="scissorsImage"
+                    />
+                    <h4>Scissors</h4>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
