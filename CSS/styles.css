@@ -1,25 +1,37 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color: aqua;
+    background-color: #ccdbdc;
+}
+
+img {
+    background-color: blanchedalmond;
+    width: 150px;
+    height: 150px;
+    padding: 40px;
+    border-radius: 5%;
+    border: solid black;
 }
 
 .header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 150px;
+    /* margin-bottom: 150px; */
+    background-color: #9ad1d4;
 }
 
 .choicesArea {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    background-color: #42C2EC;
+    padding-top: 40px;
 }
 
 .choiceTitle {
     margin-bottom: 80px;
+    font-size: 30px;
 }
 
 .choiceBoxes {
@@ -29,4 +41,8 @@ body {
 
 .choices {
     text-align: center;
+}
+
+.choiceText {
+    font-size: 20px;
 }
