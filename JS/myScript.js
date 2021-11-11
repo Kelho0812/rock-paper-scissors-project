@@ -1,13 +1,16 @@
-// First we create 2 variables to store the score of the Player & the score of the Computer and set them both to 0
+// First we create 3 variables to store:
 
-let playerScore = 0;
-let computerScore = 0;
-let roundNumber = 0
+let playerScore = 0; // - The score of the Player 
+let computerScore = 0; // - The score of the Computer
+let roundNumber = 0; // - The rounds
 
-const container = document.querySelector('.gameLog');
-
-const content = document.createElement('div');
-
+function addTextNode(text) {
+    const content = document.createElement("div");
+    content.classList.add("content");
+    content.textContent = text;
+    const container = document.querySelector(".gameLog");
+    container.appendChild(content);
+}
 
 // Now we create a function to determine the play from the Computer. We do so by creating 3 choices, then making a random choice between the 3 and then returning the value.
 
@@ -18,22 +21,9 @@ function computerPlay() {
     return randomChoice;
 }
 
-function caseInsensitive(Word) {
-    let lowerCase = Word.toLowerCase();
-    let firstLetter = lowerCase[0].toUpperCase();
-    let restWord = lowerCase.substr(1);
-    let fullWord = `${firstLetter}` + `${restWord}`;
-    return fullWord;
-}
-
-function playerSelection() {
-    let capitalized = caseInsensitive(prompt("Make your selection", "Rock"));
-    return capitalized;
-}
-
 function playRound(play1, play2) {
-    const cpuScore = document.getElementById('computerScore')
-    const player1score = document.getElementById('playerScore')
+    const cpuScore = document.getElementById("computerScore");
+    const player1score = document.getElementById("playerScore");
     let computerWins = `Round  ${roundNumber} - You Lose! ${play2} beats ${play1}`;
     let playerWins = `Round  ${roundNumber} - You Win! ${play1} beats ${play2}`;
     let tie = `Round  ${roundNumber} - Its a tie! ${play1} ties with ${play2}`;
@@ -46,9 +36,7 @@ function playRound(play1, play2) {
         roundNumber++;
         cpuScore.textContent = computerScore;
         player1score.textContent = playerScore;
-        content.classList.add('content');
-        content.textContent = computerWins;
-        container.appendChild(content);
+        addTextNode(computerWins);
         return (
             computerWins +
             ` Computer Score - ${computerScore} <==> ${playerScore} - Player Score`
@@ -62,9 +50,7 @@ function playRound(play1, play2) {
         roundNumber++;
         player1score.textContent = playerScore;
         cpuScore.textContent = computerScore;
-        content.classList.add('content');
-        content.textContent = playerWins;
-        container.appendChild(content);
+        addTextNode(playerWins);
         return (
             playerWins +
             ` Computer - ${computerScore} <==> ${playerScore} - Player`
@@ -73,9 +59,7 @@ function playRound(play1, play2) {
         roundNumber++;
         cpuScore.textContent = computerScore;
         player1score.textContent = playerScore;
-        content.classList.add('content');
-        content.textContent = tie;
-        container.appendChild(content);
+        addTextNode(tie);
         return (
             tie +
             ` Computer Score - ${computerScore} <==> ${playerScore} - Player Score`
@@ -94,18 +78,6 @@ function paperChoice() {
 function scissorsChoice() {
     console.log(playRound("Scissors", computerPlay()));
 }
-
-// if (computerScore > playerScore) {
-//     console.log(
-//         `You LOST the game! Computer wins ${computerScore} - ${playerScore}!`
-//     );
-// } else if (computerScore < playerScore) {
-//     console.log(
-//         `You WON the game! Player wins ${playerScore} - ${computerScore}!`
-//     );
-// } else {
-//     console.log(`It's a tie! The result is ${playerScore} - ${computerScore}!`);
-// }
 
 const images = document.querySelectorAll("img");
 const rockImage = document.querySelector("#rockImage");
@@ -135,7 +107,6 @@ images.forEach((img) => {
 rockImage.addEventListener("click", rockChoice);
 paperImage.addEventListener("click", paperChoice);
 scissorsImage.addEventListener("click", scissorsChoice);
-
 
 // const cpuScore = document.getElementById('computerScore')
 // cpuScore.textContent = computerScore;
