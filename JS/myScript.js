@@ -2,7 +2,7 @@
 
 let playerScore = 0; // - The score of the Player 
 let computerScore = 0; // - The score of the Computer
-let roundNumber = 0; // - The rounds
+let roundNumber = 1; // - The rounds
 
 function addTextNode(text) {
     const content = document.createElement("div");
